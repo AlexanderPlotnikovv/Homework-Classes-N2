@@ -17,6 +17,10 @@ public:
 	void value(int a) {
 		counter = a;
 	}
+	void start_value(int& a) {
+		a = 1;
+		counter = a;
+	}
 };
 
 int main()
@@ -26,11 +30,15 @@ int main()
 	std::cin >> a1;
 	int a;
 	char b = ' ';
-	if (a1 == "Yes" || a1 == "yes" ) {
+	Counter p;
+	if (a1 == "Yes" || a1 == "yes") {
 		std::cout << "Enter start value: ";
-		Counter p;
 		std::cin >> a;
 		p.value(a);
+	}
+	else {
+		p.start_value(a);
+	}
 		while (b != 'x') {
 			std::cout << "Enter command ('+', '-', '=' or 'x'): ";
 			std::cin >> b;
@@ -50,5 +58,4 @@ int main()
 				std::cout << "Bye";
 			}
 		}
-	}
 }
